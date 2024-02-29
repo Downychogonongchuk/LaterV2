@@ -1,0 +1,167 @@
+@charset "UTF-8";
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+#content {
+    
+    box-sizing: border-box;
+    padding-bottom: 50px; /* 푸터의 높이만큼 하단 여백을 추가합니다 */
+}
+
+
+
+/*위의 추가 푸터와의 간격을 설정*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.boardfile{
+	width:400px;
+	height:300px;
+}
+
+.left {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 48%; 
+    box-sizing: border-box; 
+    max-width: 800px; 
+}
+
+
+.right {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 48%; 
+    box-sizing: border-box; /* 너비에 padding, border 포함 */
+    /* 반응형 스타일 */
+    max-width: 800px; /* 최대 너비 설정 */
+}
+
+
+
+.info {
+    margin-bottom: 20px;
+}
+
+.name {
+    font-size: 24px;
+    margin: 0;
+}
+
+.name strong {
+    color: #333;
+}
+
+.info p {
+    margin: 0;
+    line-height: 1.4;
+    color: #666;
+}
+
+.detailInfo {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.detailInfo p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.detailContent {
+    font-size: 18px;
+    color: #f39c12;
+}
+
+.detailInfo ul {
+    margin-top: 10px;
+    padding-left: 20px;
+    color: #777;
+}
+
+.btn-apply{
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+.btn-apply:hover {
+    background-color: #2980b9;
+}
+
+.pay_select {
+margin-top: 20px;
+}
+
+.select_type_1 {
+width: 100%;
+padding: 10px;
+font-size: 13px;
+border: 1px solid #ddd;
+border-radius: 5px;
+background-color: #fff;
+color: #333;
+cursor: pointer;
+}
+.buttons {
+    display: flex; 
+}
+
+/* ... (기존 스타일은 여기에 있음) ... */
+
+
+/* ... (기존 스타일은 여기에 있음) ... */
+
+.agree 
+input[type="text"],
+input[type="password"],
+select {
+line-height: 1;
+-webkit-text-size-adjust: none;
+font-family: Pretendard, "Pretendard_Alt", "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", sans-serif !important;
+visibility: visible;
+color: rgba(0, 0, 0, 0.87);
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+outline: 0;
+display: block;
+border: 0;
+box-sizing: border-box;
+margin: 0 0 8px 0;
+background: #fff;
+font-size: 13px;
+width: 100%;
+padding: 23px 16px;
+border-radius: 4px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+transition: box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus {
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

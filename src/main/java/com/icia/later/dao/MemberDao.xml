@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.icia.later.dao.MemberDao">
+
+	<select id="checkDuplicateId" parameterType ="string" resultType ="Integer">
+	SELECT COUNT(*) FROM member WHERE memberEmail = #{memberEmailCheck}
+	</select>
+
+	<insert id="insertMember" parameterType="member">
+		INSERT INTO Member
+		VALUES (null,#{memberName},#{memberEmail},#{memberPass},#{memberPhone},
+				#{snsKind},#{snsFollower},#{snsLink},#{memberProfile})
+	</insert>
+	
+	<select id="login" parameterType="member" resultType="member">
+		SELECT * FROM Member 
+		WHERE memberEmail = #{memberEmail} AND memberPass = #{memberPass}
+	</select>
+	
+	<select id="selectMember" parameterType="Integer" resultType="member">
+		SELECT * FROM Member
+		WHERE memberId=${memberId}
+	</select>
+
+	<select id="FindById" parameterType="member" resultType="member">
+		SELECT * FROM Member 
+		WHERE memberName = #{memberName} AND memberPhone = #{memberPhone}
+	</select>
+	
+	<select id="FindByPass" parameterType="member" resultType="member">
+		SELECT * FROM Member 
+		WHERE memberEmail = #{memberEmail} AND memberName = #{memberName} AND memberPhone = #{memberPhone}
+	</select>
+	
+	<update id="mUpdatePassProc" parameterType="member">
+		UPDATE Member
+		SET memberPass=#{memberPass}
+		
+		WHERE memberId=#{memberId}
+	</update>
+	
+	<update id="updateMember" parameterType="member">
+		UPDATE Member
+		SET memberName=#{memberName},memberEmail=#{memberEmail},
+		memberPass=#{memberPass},memberPhone=#{memberPhone},
+		snsKind=#{snsKind},snsFollower=#{snsFollower},
+		snsLink=#{snsLink},memberProfile=#{memberProfile}
+		
+		WHERE memberId=#{memberId}
+	</update>
+	
+	<delete id="deleteMember" parameterType="Integer">
+		DELETE FROM Member
+		WHERE memberId=#{memberId}
+	</delete>
+	
+</mapper>

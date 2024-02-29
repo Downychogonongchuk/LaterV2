@@ -1,0 +1,481 @@
+@charset "UTF-8";
+* {
+	box-sizing: border-box;
+}
+html {
+	height: 100%;
+}
+body {
+	margin: 0;
+	height: 100%;
+	background-color: white;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+.wrap {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+/*
+* top-bar, footer-bar style
+*/
+.top-bar { /* 헤더 바 */
+	background-color: #006BB9;
+	color: #fff;
+	line-height: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center; /* 요소를 수직 가운데 정렬 */
+}
+/* 사이드바 스타일 */
+.sidebar {
+	height: 100%;
+	width: 400px;
+	/*             position: fixed; */
+	top: 0;
+	left: 0;
+	background-color: #ffffff;
+	padding: 20px;
+	border-right: 2px solid #006BB9;
+}
+
+.sidebar a {
+	padding: 10px 15px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #495057;
+	display: block;
+}
+
+.sidebar a:hover {
+	background-color: #e9ecef;
+}
+
+.img-box {
+	margin: 0 auto;
+	width: 200px; /* 이미지의 너비 */
+	height: 200px; /* 이미지의 높이 */
+	border-radius: 50%; /* 모서리를 둥글게 만듭니다. 값은 반지름을 나타냅니다. */
+	overflow: hidden;
+	width: 200px; /* 모서리를 둥글게 만든 부분을 이미지가 넘치지 않도록 숨깁니다. */
+}
+
+.img-box img {
+	width: 100%; /* 이미지가 부모 요소인 div에 꽉 차게 설정합니다. */
+	height: auto; /* 이미지의 높이를 자동으로 조정하여 비율을 유지합니다. */
+	display: block; /* 인라인 요소를 블록 요소로 변환합니다. */
+}
+
+.box-line {
+	padding-bottom: 50px;
+	padding-top: 30px;
+	border-bottom: 2px solid #006BB9;
+}
+
+#h4 {
+	text-align: center;
+}
+
+
+.mypage-icon {
+    position: fixed; /* 고정 위치 */
+    top: 650;
+    right: 580; /* 오른쪽 정렬 */
+    margin: 20px; /* 원하는 여백 설정 */
+    z-index: 999; /* 다른 요소 위에 표시되도록 설정 */
+    font-size: 80px;
+    color: grey;
+    opacity: 0.5;
+    user-select: none;
+}
+.mypage-icon-user {
+    position: fixed; /* 고정 위치 */
+    top: 150;
+    right: 500; /* 오른쪽 정렬 */
+    margin: 20px; /* 원하는 여백 설정 */
+    z-index: 999; /* 다른 요소 위에 표시되도록 설정 */
+    font-size: 500px;
+    color: grey;
+    opacity: 0.5;
+}
+
+.review { /* 로고위치 조정 */
+	flex: 1;
+	vertical-align: middle;
+	text-align: left;
+	padding-left: 5px;
+}
+
+.logo { /* 로고 스타일 */
+	margin: 4px;
+	width: 50px;
+	height: 50px;
+	border-radius: 10px;
+}
+
+.site { /* 사이트 이름 위치 조정 */
+	flex: 1;
+	text-align: center;
+}
+
+.link { /* 링크 스타일 */
+	font-size: 15px;
+	color: white;
+}
+
+.login-signin a { /* 로그인, 회원가입*/
+	margin-left: 10px;
+	text-decoration: none;
+}
+
+.login-signin { /* 로그인, 회원가입*/
+	flex: 1;
+	vertical-align: middle;
+	text-align: right;
+	padding-right: 5px;
+}
+.footer-bar {
+	background-color: #006BB9;
+	color: #fff;
+	height: 60px;
+	line-height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.footer-logo {
+	width: 30px;
+	border-radius: 5px;
+	margin-right: 5px;
+}
+/**************************************/
+.content {
+	padding: 15px 30px;
+	margin: 0 auto;
+	width: 800px;
+	flex: 1;
+}
+.form-header {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-size: 2em;
+	text-align: center;
+	font-size: 1.8em;
+}
+/*
+ * list style
+ */
+.movie-item {
+	width: 740px;
+	background-color: white;
+	border-radius: 10px;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
+.none-content {
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	display: block;
+	font-size: 1.6em;
+}
+.poster-pre {
+	height: 210px;
+	margin-right: 30px;
+}
+.info-pre {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 500px;
+}
+.title-pre {
+	font-size: 1.6em;
+	padding: 20px 0;
+}
+.content-pre {
+	font-size: 1.2em;
+}
+.list-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.list-title>button {
+	width: 200px;
+}
+/*
+	content style
+*/
+.filebox {
+	margin-top: 5px;
+}
+.file_h {
+	height: 400px;
+	line-height: 400px;
+	box-sizing: border-box;
+}
+.poster {
+	height: 350px;
+	vertical-align: middle;
+}
+.data-area {
+	margin-bottom: 10px;
+}
+.paging-area {
+	width: 300px;
+	margin: 0px auto;
+	margin-bottom: 50px;
+	text-align: center;
+}
+.button-container {
+	margin-top : 100px;
+  text-align: center;
+}
+.button-container .small-button {
+	margin-top : 100px;
+}
+
+.large-button, .small-button {
+	outline: none; /* 윤곽선 제거 */
+}
+.large-button {
+  padding: 50px 250px;
+  font-size: 30px;
+  background-color: #006BB9;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.small-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  margin: 10px;
+  cursor: pointer;
+}
+.btn-area {
+	width: 300px;
+	margin: 0px auto;
+	margin-bottom: 100px;
+	text-align: center;
+}
+.btn-area .paging {
+	width: 100%;
+	height: 30px;
+	margin: 0px auto;
+	opacity: 0.8;
+	text-align: center;
+}
+.paging .pno {
+	display: inline-block;
+	background-color: #efefef;
+	margin: 2px;
+	border: 1px solid #6c6c6c;
+	border-radius: 3px;
+	line-height: 1.8;
+	font-size: 15px;
+	width: 30px;
+	height: 30px;
+}
+font.pno {
+	color: #0B3736;
+	font-weight: bold;
+}
+.paging>a {
+	text-decoration: none;
+}
+.paging>a:visited {
+	color: #575757;
+}
+.wr-btn {
+	padding: 10px 16px;
+	font-size: 16px;
+	line-height: 1.5;
+	border-radius: 6px;
+	color: #fff;
+	background-color: #1877F2;
+}
+.write-input {
+	position: relative;
+	height: auto;
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 16px;
+	display: block;
+	width: 100%;
+	line-height: 1.5;
+	color: #555;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.ta {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	resize: none;
+}
+.btn-write {
+	width: 100px;
+	padding: 10px 16px;
+	font-size: 16px;
+	line-height: 1.5;
+	border-radius: 6px;
+	color: #fff;
+	background-color: #1877F2;
+	margin-top: 10px;
+}
+.btn-write[type="button"] {
+	background-color: black;
+}
+.filebox input[type="file"] {
+	position: absolute;
+	width: 0;
+	height: 0;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
+}
+.filebox label {
+	display: inline-block;
+	padding: 10px 20px;
+	color: #ffffff;
+	vertical-align: middle;
+	background-color: #006BB9;
+	cursor: pointer;
+	border: 1px solid #ebebeb;
+	border-radius: 5px;
+	width: 20%;
+}
+.filebox .upload-name {
+	display: inline-block;
+	width: 79%;
+	height: 35px;
+	font-size: 16px;
+	padding: 0 10px;
+	vertical-align: middle;
+	background-color: #f5f5f5;
+	border: 1px solid #ebebeb;
+	border-radius: 5px;
+}
+/*
+	detail style
+*/
+.detail {
+	align-items: center;
+	background-color: white;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+.detail-sub {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 10px 0;
+}
+.detail-title {
+	flex-shrink: 0;
+	width: 10%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+.detail-content {
+	text-align: center;
+	flex-grow: 1;
+}
+.synopsis-title {
+	width: 100%;
+	padding: 10px;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+.synopsis-content {
+	width: 100%;
+	padding: 10px;
+	white-space: pre-line;
+}
+.btn-sub {
+	width: 50px;
+	padding: 10px 16px;
+	font-size: 16px;
+	line-height: 1.5;
+	border-radius: 6px;
+	color: #fff;
+	background-color: #22adab;
+	margin-top: 10px;
+}
+/*
+ * Responsive css
+ */
+@media only screen and (max-width: 768px) {
+	.content {
+		max-width: 100%;
+	}
+	.list-title>button {
+		width: 50%;
+	}
+	.movie-item {
+		width: 100%;
+		flex-direction: column;
+	}
+	.movie-item>a {
+		width: 100%;
+	}
+	.poster-pre {
+		height: 100%;
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 20px;
+	}
+	.info-pre {
+		text-align: center;
+		width: 100%;
+	}
+	.info-pre>div {
+		margin-bottom: 5px;
+	}
+		width: 100%;
+	}
+	.btn-area {
+		width: 100%;
+	}
+	.filebox label {
+		text-align: center;
+		width: 100%;
+	}
+	.filebox .upload-name {
+		width: 100%;
+	}
+	.detail {
+		padding: 15px;
+	}
+	.detail-title {
+		width: 100%;
+		margin-bottom: 5px;
+		font-size: 1.4em;
+	}
+	.detail-content {
+		font-size: 1.2em;
+	}
+	.synopsis-title {
+		font-size: 1.4em;
+		text-align: center;
+	}
+}

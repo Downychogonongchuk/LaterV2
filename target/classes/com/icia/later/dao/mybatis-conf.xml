@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd"> 
+<!-- Mybatis configuration xml File -->
+
+<configuration>
+			<typeAliases>
+				<!-- 
+				<typeAlias type="<com.icia.movieinfo.dto.MovieDto"
+				 alias="movie"/>
+				  --> 
+				 <!-- DTO Type 지정 -->
+				 <package name="com.icia.later.dto"/>
+			</typeAliases>
+</configuration>

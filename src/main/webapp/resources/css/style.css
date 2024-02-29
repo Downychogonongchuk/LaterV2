@@ -1,0 +1,155 @@
+@charset "UTF-8";
+/*header*/
+.top-bar {
+	background-color: #006BB9;
+	color: #fff;
+	line-height: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center; /* 요소를 수직 가운데 정렬 */
+}
+/*
+.review { 로고:
+	vertical-align: middle;
+	text-align: left;
+} 
+*/
+
+.review { /* 로고위치 조정 */
+	flex: 1;
+	vertical-align: middle;
+	text-align: left;
+	padding-left: 5px;
+}
+
+.logo {
+	margin: 4px;
+	width: 50px;
+	height: 50px;
+	border-radius: 10px;
+}
+.site { /* 사이트 이름 위치 조정 */
+	flex: 1;
+	text-align: center;
+}
+/*
+.site { 리뷰엔
+	text-align: center;
+	margin-left: 50%; 
+    transform: translateX(-50%); 
+}
+*/
+
+.link {
+	font-size: 15px;
+	color: white;
+}
+
+.login-signin a {
+	margin-left: 10px;
+	text-decoration: none;
+}
+
+/*
+.login-signin {
+	vertical-align: middle;
+	text-align: right;
+}
+*/
+
+.login-signin { /* 로그인, 회원가입*/
+	flex: 1;
+	vertical-align: middle;
+	text-align: right;
+	padding-right: 5px;
+}
+ 
+ 
+ /*footer*/
+.footer-bar {
+	background-color: #006BB9;
+	color: #fff;
+	height: 60px;
+	line-height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer-logo {
+	width: 30px;
+	border-radius: 5px;
+	margin-right: 5px;
+}
+
+.information {
+	text-align: right;
+}
+
+/*여기부터 상세페이지 css*/
+/* 전체 페이지 스타일링 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* 컨테이너 스타일링 */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 헤더와 푸터 스타일링 */
+#container {
+    background-color: #f5f5f5;
+}
+
+/* 좌측 박스 스타일링 */
+.left {
+    width: 50%;
+}
+
+#bigImage {
+    background-color: #ddd; /* 예시로 배경색 추가 */
+    height: 200px; /* 예시로 높이 추가 */
+    margin-bottom: 10px;
+}
+
+#smallImage {
+    background-color: #ddd; /* 예시로 배경색 추가 */
+    height: 100px; /* 예시로 높이 추가 */
+}
+
+/* 우측 박스 스타일링 */
+.right {
+    width: 50%;
+}
+
+.detailInfo,
+.checkInfo {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn-area {
+    margin-top: 20px;
+}
+
+/* 버튼 스타일링 */
+.btn-apply,
+.btn-interest {
+    padding: 10px;
+    margin-right: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* 버튼에 호버 효과 추가 */
+.btn-apply:hover,
+.btn-interest:hover {
+    background-color: #217dbb;
+}

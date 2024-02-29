@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.icia.later.dao.BoardDao">
+	
+	<!-- 모집글 등록 -->
+	<insert id="insertBoard" parameterType="board">
+		INSERT INTO board ( periodStart, periodEnd, personnel, 
+							companyName, detail, checkInfo,
+							provideType, price, boardFile, 
+							category, customerId)
+		VALUES (#{periodStart}, #{periodEnd}, #{personnel}, 
+				#{companyName}, #{detail}, #{checkInfo}, #{provideType},
+				#{price}, #{boardFile}, #{category}, #{customerId})
+	</insert>
+	
+		<!--업체 수정  -->
+	<update id="updateBoard" parameterType="board">
+		UPDATE board
+		INNER JOIN customer ON board.customerId = customer.customerId
+		SET board.periodStart=#{periodStart}, board.periodEnd=#{periodEnd}, 
+		board.personnel=#{personnel}, board.detail=#{detail}, 
+		board.checkInfo=#{checkInfo}, board.price=#{price}, 
+		board.boardFile=#{boardFile}, board.category=#{category}, board.customerId=#{customerId}
+		WHERE board.boardId = #{boardId}
+	</update>
+	<!-- 업체 삭제 -->
+	<delete id="deleteBoard" parameterType="Integer">
+		DELETE FROM board WHERE boardId = #{boardId}
+	</delete>
+	<!-- 수정할 업체 불러오기 -->
+	<select id="getBoardList" resultType="board">
+		SELECT * FROM board
+	</select>
+
+	<!-- 상세 모집글 -->
+	<select id="selectBoard" parameterType="Integer"
+		resultType="board">
+		select * from board
+		where boardId=#{boardId}
+	</select>
+	
+	
+	<!-- 신청한 글 목록 -->
+	<select id="applyCompany" parameterType="Integer"
+		resultType="board">
+		select * from board
+		where boardId=#{boardId}
+	</select>
+	
+	<!-- 내가 모집한 글 목록-->
+	<select id="getBoardListBycustomerId" parameterType="HashMap"
+		resultType="board">
+		select * from board
+		where customerId=#{pMap.customerId}
+		LIMIT #{pMap.pageNum},
+		#{pMap.listCnt}
+	</select>
+
+</mapper>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

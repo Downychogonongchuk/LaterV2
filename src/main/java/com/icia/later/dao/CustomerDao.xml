@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.icia.later.dao.CustomerDao">
+  
+  <select id="checkDuplicateId" parameterType ="string" resultType ="Integer">
+	SELECT COUNT(*) FROM customer WHERE customerEmail = #{customerEmailCheck}
+	</select>
+
+	<insert id="insertCustomer" parameterType="customer">
+		INSERT INTO customer
+		VALUES (null,#{customerName},#{customerEmail},#{customerPass},#{customerNum},
+				#{companyName},#{companyAddress},#{sectors},#{customerProfile})
+	</insert>
+	
+	<select id="login" parameterType="customer" resultType="customer">
+		SELECT * FROM customer 
+		WHERE customerEmail = #{customerEmail} AND customerPass = #{customerPass}
+	</select>
+	
+	<select id="FindById" parameterType="customer" resultType="customer">
+		SELECT * FROM customer 
+		WHERE customerName = #{customerName} AND customerNum = #{customerNum}
+	</select>
+	
+	<select id="FindByPass" parameterType="customer" resultType="customer">
+		SELECT * FROM customer 
+		WHERE customerEmail = #{customerEmail} AND customerName = #{customerName} AND customerNum = #{customerNum}
+	</select>
+	
+	<update id="cUpdatePassProc" parameterType="customer">
+		UPDATE customer
+		SET customerPass=#{customerPass}
+		
+		WHERE customerId=#{customerId}
+	</update>
+	
+	<update id="updateCustomer" parameterType="customer">
+		UPDATE customer
+		SET customerName=#{customerName},customerEmail=#{customerEmail},
+		customerPass=#{customerPass},customerNum=#{customerNum},
+		companyName=#{companyName},companyAddress=#{companyAddress},
+		sectors=#{sectors},customerProfile=#{customerProfile}
+		
+		WHERE customerId=#{customerId}
+	</update>
+	
+	<delete id="deleteCustomer" parameterType="Integer">
+		DELETE FROM customer
+		WHERE customerId=#{customerId}
+	</delete>
+	
+</mapper>
